@@ -1,4 +1,4 @@
-class Node {
+class Node {//
 public:
     int key;
     Node* izq;
