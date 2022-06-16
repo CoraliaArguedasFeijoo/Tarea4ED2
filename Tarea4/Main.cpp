@@ -2,6 +2,7 @@
 #include "B.cpp"
 #include "AVL.cpp"
 #include "BPlus.cpp"
+#include "RN.cpp"
 
 using namespace std;
 
@@ -9,6 +10,7 @@ int main() {
     AVL* avl = new AVL();
     Node* raiz = NULL;
     B* b = new B();
+    RBTree* RN = new RBTree();
 
     int i, n, t;
     cout << "enter the number of elements to be inserted\n";
@@ -21,6 +23,7 @@ int main() {
         cin >> t;
         b->insert(t);
         bptree->insert(t);
+        RN->insert(t);
         raiz = avl->insertarNodo(raiz, t);
     }
 
@@ -33,4 +36,6 @@ int main() {
     cout << "BPlus Tree\n";
     bptree->printNode(bptree->root);
 
+    cout << "\n\nLevel Order Traversal of Created Tree\n";
+    RN->prettyPrint();
 }
